@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block page_content %}
+    <h2>Books</h2>
+
+    <ul>
+        {% for book in book_list %}
+            <li>{{ book.title }} </li>
+        {% empty %}
+            <p>Nema knjiga</p>
+        {% endfor %}
+    </ul>
+{% endblock page_content %}
