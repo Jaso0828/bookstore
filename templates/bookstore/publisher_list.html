@@ -2,12 +2,15 @@
 
 {% block page_content %}
     <h2>Publishers</h2>
-
-<ul>
-    {% for publisher in publisher_list %}
-        <li>{{ publisher.name }}</li>
-    {% empty %}
-        <p>Nema publishera</p>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for publisher in publisher_list %}
+            <li>
+                <a href={% url 'publisher_details' publisher.pk %}>
+                    {{ publisher.name }}
+                </a>
+            </li>
+        {% empty %}
+            <p>U bazi nema niti jedan izdavac</p>
+        {% endfor %}
+    </ul>
 {% endblock page_content %}

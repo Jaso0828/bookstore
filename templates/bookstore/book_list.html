@@ -2,12 +2,15 @@
 
 {% block page_content %}
     <h2>Books</h2>
-
     <ul>
         {% for book in book_list %}
-            <li>{{ book.title }} </li>
+            <li>
+                <a href={% url 'book_details' book.pk %}>
+                    {{ book.title }}
+                </a>
+            </li>
         {% empty %}
-            <p>Nema knjiga</p>
+            <p>U bazi nema niti jedne knjige</p>
         {% endfor %}
     </ul>
 {% endblock page_content %}
